@@ -39,7 +39,7 @@ class ServiceInventoryMovement {
   }
 
   async Update(inventoryId, id, type, amount, transaction) {
-    const oldInventoryMovement = await this.FindById(organization_id, inventoryId, id, transaction)
+    const oldInventoryMovement = await this.FindById(inventoryId, id, transaction)
     if (!oldInventoryMovement) {
       throw new Error('Estoque nao encontrado')
     } 
